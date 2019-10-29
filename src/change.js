@@ -10,13 +10,13 @@ if (Number.isNaN(amount)) {
 } else if (amount < MIN || amount > MAX) {
     console.log("Invalid.");
 } else {
-    let quarters = Math.floor(amount / 0.25);
+    const quarters = Math.floor(amount / 0.25);
     let remainder = amount % 0.25;
-    let dimes = Math.floor(remainder / 0.1);
+    const dimes = Math.floor(remainder / 0.1);
     remainder %= 0.1;
-    let nickels = Math.floor(remainder / 0.05);
+    const nickels = Math.floor(remainder / 0.05);
     remainder %= 0.05;
-    let pennies = Math.ceil(remainder / 0.01);
+    const pennies = Math.ceil(remainder / 0.01);
 
-    console.log(quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, " + pennies + " pennies.");
+    console.log("\n" + quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, " + pennies + " pennies.");
 }

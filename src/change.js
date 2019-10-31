@@ -18,5 +18,5 @@ if (Number.isNaN(amount)) {
     remainder %= 0.05;
     const pennies = Math.ceil(remainder / 0.01);
 
-    console.log("\n" + quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, " + pennies + " pennies.");
+    console.log("\n" + quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, and " + pennies + " pennies.");
 }

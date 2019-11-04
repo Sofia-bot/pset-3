@@ -52,4 +52,4 @@ if (playingCard.indexOf("C") == 1) {
 
 
 
-console.log("\n" + rank + " of " + suit);
+console.log("\n" + rank + " of " + suit + ".");

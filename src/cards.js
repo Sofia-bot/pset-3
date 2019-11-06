@@ -1,8 +1,15 @@
-const readlineSync = require("readline-sync");
+let readlineSync = require("readline-sync");
 
-const playingCard = readlineSync.question("\nEnter a playing card: ");
+let playingCard = readlineSync.question("\nEnter a playing card: ");
+playingCard = playingCard.toUpperCase();
 let suit;
 let rank;
+
+/*
+ * Handle cases where the user enters something invallid that happens
+ * to contain a substring that is a valid card.
+ *    - i.e., KH123 should be invalid.
+ */
 
 if (playingCard.indexOf("2") == 0) {
   rank = 'Two';

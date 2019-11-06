@@ -3,6 +3,13 @@ const readlineSync = require("readline-sync");
 const MIN = Number.MIN_SAFE_INTEGER;
 const MAX = Number.MAX_SAFE_INTEGER;
 
+/*
+ * Check your threshold values.
+ *    - i.e., Enter 32 and f. Your code outputs Liquid, but it should output Solid.
+ *    - i.e., Enter 212 and f. Your code outputs Liquid, but it should output Gas.
+ *    - i.e., Similar issues with other temperature scales.
+ */
+
 let temperature = readlineSync.question("\nEnter a temperature: ");
 const scale = readlineSync.question("Enter a scale: ");
 const liquidLower = 0;

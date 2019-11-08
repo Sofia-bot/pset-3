@@ -10,10 +10,6 @@ const gradeD = 60;
 
 const grade = Number(readlineSync.question("\n\nEnter a grade: "));
 
-/*
- * Put a line break between prompt and output.
- */
-
 if (Number.isNaN(grade)) {
     console.log("\nInvalid.");
 } else if (grade < MIN || grade > MAX) {

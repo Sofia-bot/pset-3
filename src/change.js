@@ -9,16 +9,6 @@ const pennyValue = 0.01;
 
 const amount = Number(readlineSync.question("\nEnter a dollar amount: "));
 
-/*
- * Make sure there's a line break between the prompt and Invalid.
- *    - i.e., Enter -1 when prompted.
- *
- * Handle cases where a user enters a value with more than two decimals.
- *    - i.e., Enter 0.987654321. This should be invalid.
- *
- * Save coin denominations as constants (i.e., 0.25, 0.1, etc.).
- */
-
 if (Number.isNaN(amount)) {
     console.log("\nInvalid.");
 } else if (amount < MIN || amount > MAX) {

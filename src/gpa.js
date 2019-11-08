@@ -1,11 +1,12 @@
 const readlineSync = require("readline-sync");
 
-const grade = readlineSync.question("\nEnter a letter grade: ");
+const grade = readlineSync.question("\n\nEnter a letter grade: ");
+const gradeRegEx = /^[-+ABCDF]+$/;
 let gpa = 0;
 
-if (grade.includes('+')) {
+if (grade.indexOf('+') == 1) {
   gpa += 0.33;
-} else if (grade.includes('-')) {
+} else if (grade.indexOf('-') == 1) {
   gpa -= 0.33;
 }
 
@@ -17,22 +18,24 @@ if (grade.includes('+')) {
  * Account for invalid input that contains a valid substring.
  *   - i.e., B+-123 should be invalid.
  */
-
-if (grade.includes('A')) {
+if (!gradeRegEx.test(grade)) {
+  console.log("\nInvalid.");
+  return;
+} else if (grade.indexOf('A') == 0 && !grade.includes('-')) {
+    gpa = 4.00;
+} else if (grade == 'A-'){
     gpa += 4.00;
-    console.log ("\nYour GPA is " + gpa);
-} else if (grade.includes('B')) {
+} else if (grade.indexOf('B') == 0) {
     gpa += 3.00;
-    console.log ("\nYour GPA is " + gpa);
-} else if (grade.includes('C')) {
+} else if (grade.indexOf('C') == 0) {
     gpa += 2.00;
-    console.log ("\nYour GPA is " + gpa);
-} else if (grade.includes('D')) {
+} else if (grade.indexOf('D') == 0) {
     gpa += 1.00;
-    console.log ("\nYour GPA is " + gpa);
-} else if (grade.includes('F')) {
-    gpa += 0.00;
-    console.log ("\nYour GPA is " + gpa);
+} else if (grade == 'F') {
+    gpa = 0.00;
 } else {
     console.log ("\nInvalid.");
+    return;
 }
+gpa = Number(gpa).toFixed(2);
+console.log ("\nYour GPA is " + gpa);

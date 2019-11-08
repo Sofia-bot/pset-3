@@ -3,7 +3,7 @@ const readlineSync = require("readline-sync");
 const thirtyOneDays = ["january", "march", "may", "july", "august", "october", "december", "jan", "mar", "jul", "aug", "oct", "dec"];
 const thirtyDays = ["april", "june", "september", "november", "apr", "jun", "sep", "nov"];
 
-let month = readlineSync.question("\nEnter a month: ");
+let month = readlineSync.question("\n\nEnter a month: ");
 month = month.toLowerCase();
 
 if (thirtyOneDays.includes(month)) {

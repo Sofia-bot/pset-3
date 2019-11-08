@@ -8,24 +8,24 @@ const gradeB = 80;
 const gradeC = 70;
 const gradeD = 60;
 
-const grade = Number(readlineSync.question("\nEnter a grade: "));
+const grade = Number(readlineSync.question("\n\nEnter a grade: "));
 
 /*
  * Put a line break between prompt and output.
  */
 
 if (Number.isNaN(grade)) {
-    console.log("Invalid.");
+    console.log("\nInvalid.");
 } else if (grade < MIN || grade > MAX) {
-    console.log("Invalid.");
-} else if (grade <= MAX || grade >= gradeA) {
-    console.log("You received an A.");
-} else if (grade < gradeA || grade >= gradeB) {
-    console.log("You received a B.");
-} else if (grade < gradeB || grade >= gradeC) {
-    console.log("You received a C.");
-} else if (grade < gradeC || grade >= gradeD) {
-    console.log("You received a D.");
+    console.log("\nInvalid.");
+} else if (grade <= MAX && grade >= gradeA) {
+    console.log("\nYou received an A.");
+} else if (grade < gradeA && grade >= gradeB) {
+    console.log("\nYou received a B.");
+} else if (grade < gradeB && grade >= gradeC) {
+    console.log("\nYou received a C.");
+} else if (grade < gradeC && grade >= gradeD) {
+    console.log("\nYou received a D.");
 } else if (grade < gradeD) {
-    console.log("You received an F.");
+    console.log("\nYou received an F.");
 }

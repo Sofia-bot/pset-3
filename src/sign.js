@@ -1,6 +1,6 @@
 const readlineSync = require("readline-sync");
 
-const number = Number(readlineSync.question("\nEnter a number: "));
+const number = Number(readlineSync.question("\n\nEnter a number: "));
 
 /*
  * Handle non-numeric input, which should be invalid.
@@ -8,6 +8,8 @@ const number = Number(readlineSync.question("\nEnter a number: "));
  */
 
 if (number < Number.MIN_SAFE_INTEGER || number > Number.MAX_SAFE_INTEGER) {
+    console.log("\nInvalid.");
+} else if (Number.isNaN(number)) {
     console.log("\nInvalid.");
 } else if (number > 0) {
     console.log("\nPositive.");

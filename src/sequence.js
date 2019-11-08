@@ -3,7 +3,7 @@ const readlineSync = require("readline-sync");
 const MIN = Number.MIN_SAFE_INTEGER;
 const MAX = Number.MAX_SAFE_INTEGER;
 
-console.log("\nEnter three numbers.");
+console.log("\n\nEnter three numbers.");
 const number1 = Number(readlineSync.question("\n"));
 const number2 = Number(readlineSync.question());
 const number3 = Number(readlineSync.question());
